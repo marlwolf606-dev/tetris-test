@@ -252,42 +252,42 @@ function initialiseCanvasBoard() {
         document.getElementById("textOverlay").style.height = Math.max(settings.boardHeight*8, 240) + "px";
         document.body.style.backgroundImage = "none";
         let leftSide = 160-settings.boardWidth*4;
-        images.tiles.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/tiles.png";
-images.hardDropTile.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/ghostTiles.png";
+        images.tiles.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/tiles.png";
+images.hardDropTile.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/ghostTiles.png";
 
 if ((settings.visuals == "dragonStyle" && level >= 500) || settings.visuals == "onTheBeat") {
-    images.board.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/board3.png";
+    images.board.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/board3.png";
 }
 else if (settings.visuals == "masterStyle") {
-    images.board.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/board2.png";
+    images.board.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/board2.png";
 }
 else {
-    images.board.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/board.png";
+    images.board.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/board.png";
 }
 
-images.sideInfo1.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/sideInfo.png";
-images.sideInfo2.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/digitsSmall.png";
-images.sideInfo3.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/finish.png";
-images.sideInfo4.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/boardBack.png";
-images.readyGo.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/readyGo.png";
-images.tileVanish.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/explosionEffect.png";
-images.digits.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/digits.png";
+images.sideInfo1.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/sideInfo.png";
+images.sideInfo2.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/digitsSmall.png";
+images.sideInfo3.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/finish.png";
+images.sideInfo4.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/boardBack.png";
+images.readyGo.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/readyGo.png";
+images.tileVanish.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/explosionEffect.png";
+images.digits.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/digits.png";
 
 if (settings.visuals == "classicStyle") {
-    images.grades.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/gradesClassic.png";
+    images.grades.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/gradesClassic.png";
 }
 else if (settings.visuals == "masterStyle") {
-    images.grades.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/gradesMaster.png";
+    images.grades.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/gradesMaster.png";
 }
 else if (settings.visuals == "onTheBeat") {
-    images.grades.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/gradesOnTheBeat.png";
+    images.grades.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/gradesOnTheBeat.png";
 }
 else {
-    images.grades.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/gradesDragon.png";
+    images.grades.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/gradesDragon.png";
 }
 
 if (settings.visuals == "onTheBeat") {
-    images.beatBar.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/beatBar.png";
+    images.beatBar.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/beatBar.png";
 }
         //Classic style DAS
         if (settings.gameMechanics == "classicStyle") {
@@ -331,18 +331,21 @@ if (settings.visuals == "onTheBeat") {
         let leftSide = 120-settings.boardWidth*4;
         document.body.style.backgroundColor = "#84a563";
         document.body.style.backgroundImage = "none";
-        images.tiles.src = "img/gb/tiles.png";
-        images.hardDropTile.src = "img/gb/hardDropTile.png";
-        images.board.src = "img/gb/boardSmall.png";
-        //Draw the board
-        for (let i=0;i<settings.boardHeight;i++) {
-            ctx.drawImage(images.board, 0, (i*8)%24, 16, 8, leftSide, i*8, 16, 8);
-            ctx.drawImage(images.board, 8, (i*8)%24, 8, 8, (8*settings.boardWidth)+leftSide+16, i*8, 8, 8);
-        }
-        ctx.fillStyle = "#c6de86";
-        ctx.fillRect(leftSide+16, 0, (8*settings.boardWidth), (8*settings.boardHeight));
-        //Draw the side info
-        images.sideInfo1.src = "img/gb/sideInfo.png";
+        images.tiles.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/gb/tiles.png";
+images.hardDropTile.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/gb/hardDropTile.png";
+images.board.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/gb/boardSmall.png";
+
+//Draw the board
+for (let i=0;i<settings.boardHeight;i++) {
+    ctx.drawImage(images.board, 0, (i*8)%24, 16, 8, leftSide, i*8, 16, 8);
+    ctx.drawImage(images.board, 8, (i*8)%24, 8, 8, (8*settings.boardWidth)+leftSide+16, i*8, 8, 8);
+}
+
+ctx.fillStyle = "#c6de86";
+ctx.fillRect(leftSide+16, 0, (8*settings.boardWidth), (8*settings.boardHeight));
+
+//Draw the side info
+images.sideInfo1.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/gb/sideInfo.png";
         ctx.drawImage(images.sideInfo1, (8*settings.boardWidth)+leftSide+24, 0, 56, 144);
         if (settings.boardHeight > 18) {
             for (let i=18;i<settings.boardHeight;i++) {
@@ -379,9 +382,9 @@ if (settings.visuals == "onTheBeat") {
         let leftSide = 160-settings.boardWidth*4;
         document.body.style.backgroundColor = "#747474";
         document.body.style.backgroundImage = "none";
-        images.tiles.src = "img/nes/tiles.png";
-        images.hardDropTile.src = "img/nes/hardDropTile.png";
-        images.board.src = "img/nes/boardSmall.png";
+        images.tiles.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/nes/tiles.png";
+images.hardDropTile.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/nes/hardDropTile.png";
+images.board.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/nes/boardSmall.png";
         //Draw the corners
         ctx.drawImage(images.board, 0, 0, 8, 8, leftSide, 24, 8, 8);
         ctx.drawImage(images.board, 16, 0, 8, 8, 8*settings.boardWidth+leftSide+8, 24, 8, 8);
@@ -398,22 +401,22 @@ if (settings.visuals == "onTheBeat") {
             ctx.drawImage(images.board, 16, 8, 8, 8, leftSide+8*settings.boardWidth+8, 32+i*8, 8, 8);
         }
         //Draw the side info
-        images.sideInfo1.src = "img/nes/sideInfo.png";
+        images.sideInfo1.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/nes/sideInfo.png";
         ctx.drawImage(images.sideInfo1, 8*settings.boardWidth+leftSide+16, 0);
         if (!settings.timeDisplay) {
             ctx.fillStyle = "black";
             ctx.fillRect(8*settings.boardWidth+leftSide+24, 16, 32, 8);
         }
 
-        images.sideInfo2.src = "img/nes/linesBoxSmall.png";
+        images.sideInfo2.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/nes/linesBoxSmall.png";
         ctx.drawImage(images.sideInfo2, 0, 0, 8, 24, leftSide, 0, 8, 24);
         ctx.drawImage(images.sideInfo2, 16, 0, 8, 24, 8*settings.boardWidth+leftSide+8, 0, 8, 24);
         for (let i=0;i<settings.boardWidth;i++) ctx.drawImage(images.sideInfo2, 8, 0, 8, 24, leftSide+8+i*8, 0, 8, 24);
 
-        images.sideInfo3.src = "img/nes/statistics.png";
+        images.sideInfo3.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/nes/statistics.png";
         ctx.drawImage(images.sideInfo3, 0, 0, 80, 152, leftSide-80, 48, 80, 152);
 
-        images.sideInfo4.src = "img/nes/statPieces.png";
+        images.sideInfo4.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/nes/statPieces.png";
         let pieceColorSet;
         if (inCampaignMode()) {pieceColorSet = Math.floor(level/100);}
         else {pieceColorSet = level%10;}
@@ -464,9 +467,9 @@ if (settings.visuals == "onTheBeat") {
         let leftSide = 120-settings.boardWidth*4;
         document.body.style.backgroundColor = "#28a078";
         document.body.style.backgroundImage = "none";
-        images.tiles.src = "img/dx/tiles.png";
-        images.hardDropTile.src = "img/dx/hardDropTile.png";
-        images.board.src = "img/dx/boardSmall.png";
+        images.tiles.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/dx/tiles.png";
+images.hardDropTile.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/dx/hardDropTile.png";
+images.board.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/dx/boardSmall.png";
         //Draw the board
         for (let i=0;i<settings.boardHeight;i++) {
             ctx.drawImage(images.board, 0, (i*8)%48, 16, 8, leftSide, i*8, 16, 8);
@@ -476,7 +479,7 @@ if (settings.visuals == "onTheBeat") {
         ctx.fillStyle = dxBackgroundColours[backgroundColor];
         ctx.fillRect(leftSide+16, 0, (8*settings.boardWidth), (8*settings.boardHeight));
         //Draw the side info
-        images.sideInfo1.src = "img/dx/sideInfo.png";
+        images.sideInfo1.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/dx/sideInfo.png";
         ctx.drawImage(images.sideInfo1, 0, 0, 56, 144, (8*settings.boardWidth)+leftSide+24, 0, 56, 144);
         if (settings.boardHeight > 18) {
             for (let i=18;i<settings.boardHeight;i++) {
@@ -513,12 +516,12 @@ if (settings.visuals == "onTheBeat") {
         let leftSide = 152-settings.boardWidth*4;
         document.body.style.backgroundColor = "#333";
         document.body.style.backgroundImage = "none";
-        images.tiles.src = "img/sega/tiles.png";
-        images.hardDropTile.src = "img/sega/hardDropTile.png";
-        images.board.src = "img/sega/board.png";
-        images.background.src = "img/sega/backgrounds.png";
-        images.tileVanish.src = "img/sega/tileVanish.png";
-        images.digits.src = "img/sega/digits.png";
+        images.tiles.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/sega/tiles.png";
+images.hardDropTile.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/sega/hardDropTile.png";
+images.board.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/sega/board.png";
+images.background.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/sega/backgrounds.png";
+images.tileVanish.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/sega/tileVanish.png";
+images.digits.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/sega/digits.png";
         let currentBackground = segaBackgroundLevels[Math.min(level, 15)];
         ctx.drawImage(images.background, currentBackground*320, 0, 320, 225, 0, 0, 320, 225);
         //Draw the corners
@@ -547,7 +550,7 @@ if (settings.visuals == "onTheBeat") {
             ctx.drawImage(images.board, 80-Math.min(i,5)*8, 168, 8, 16, 8*settings.boardWidth+leftSide-i*8, 8*settings.boardHeight+32, 8, 16);
         }
         //Draw the side info
-        images.sideInfo1.src = "img/sega/sideInfo.png";
+        images.sideInfo1.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/sega/sideInfo.png";
         ctx.drawImage(images.sideInfo1, leftSide-56, 16);
     }
     else if (settings.visuals == "tgm") {
@@ -556,17 +559,17 @@ if (settings.visuals == "onTheBeat") {
         let leftSide = 160-settings.boardWidth*4;
         document.body.style.backgroundColor = "#333";
         document.body.style.backgroundImage = "none";
-        images.tiles.src = "img/tgm/tiles.png";
-        images.hardDropTile.src = "img/tgm/ghostTiles.png";
-        images.board.src = "img/tgm/board.png";
-        images.background.src = "img/tgm/backgrounds.png";
-        images.background2.src = "img/tgm/backgroundsDark.png";
-        images.sideInfo1.src = "img/tgm/sideInfo.png";
-        images.sideInfo2.src = "img/tgm/levelBars.png";
-        images.sideInfo3.src = "img/tgm/timeDigits.png";
-        images.readyGo.src = "img/tgm/readyGo.png";
-        images.digits.src = "img/tgm/digits.png";
-        images.grades.src = "img/tgm/grades.png";
+        images.tiles.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/tgm/tiles.png";
+images.hardDropTile.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/tgm/ghostTiles.png";
+images.board.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/tgm/board.png";
+images.background.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/tgm/backgrounds.png";
+images.background2.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/tgm/backgroundsDark.png";
+images.sideInfo1.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/tgm/sideInfo.png";
+images.sideInfo2.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/tgm/levelBars.png";
+images.sideInfo3.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/tgm/timeDigits.png";
+images.readyGo.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/tgm/readyGo.png";
+images.digits.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/tgm/digits.png";
+images.grades.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/tgm/grades.png";
         let currentBackground = Math.floor(level/100);
         ctx.drawImage(images.background, currentBackground*320, 0, 320, 240, 0, 0, 320, 240);
         //Draw the board (to be improved)
@@ -3260,7 +3263,7 @@ function clearLines() {
         if (settings.visuals == "dragonStyle" && Math.floor(level/100) == 4) { //Switch to grey background and board
             seaColor = [30, 30, 30];
             waveColor = [70, 70, 70];
-            images.board.src = "img/main/board3.png";
+            images.board.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/board3.png";
             ctx.drawImage(images.board, 112, 32);
         }
         if (settings.gameMechanics == "dragonStyle") { //Update DAS and lock delay
@@ -3306,7 +3309,7 @@ function clearLines() {
             ctx.drawImage(images.background, currentBackground*320+leftSide, 0, 320-leftSide, 24, leftSide, 0, 320-leftSide, 24);
             ctx.drawImage(images.background, currentBackground*320+leftSide, boardBottom, 320-leftSide, 320, leftSide, boardBottom, 320-leftSide, 320);
             //Draw the side info
-            images.sideInfo1.src = "img/sega/sideInfo.png";
+            images.sideInfo1.src = "https://gcore.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/sega/sideInfo.png";
             ctx.drawImage(images.sideInfo1, leftSide-56, 16);
             setNextPieceVisuals(nextPiece);
             updateVisuals();
