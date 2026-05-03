@@ -252,23 +252,43 @@ function initialiseCanvasBoard() {
         document.getElementById("textOverlay").style.height = Math.max(settings.boardHeight*8, 240) + "px";
         document.body.style.backgroundImage = "none";
         let leftSide = 160-settings.boardWidth*4;
-        images.tiles.src = "img/main/tiles.png";
-        images.hardDropTile.src = "img/main/ghostTiles.png";
-        if ((settings.visuals == "dragonStyle" && level >= 500) || settings.visuals == "onTheBeat") {images.board.src = "img/main/board3.png";}
-        else if (settings.visuals == "masterStyle") {images.board.src = "img/main/board2.png";}
-        else {images.board.src = "img/main/board.png";}
-        images.sideInfo1.src = "img/main/sideInfo.png";
-        images.sideInfo2.src = "img/main/digitsSmall.png";
-        images.sideInfo3.src = "img/main/finish.png";
-        images.sideInfo4.src = "img/main/boardBack.png";
-        images.readyGo.src = "img/main/readyGo.png";
-        images.tileVanish.src = "img/main/explosionEffect.png";
-        images.digits.src = "img/main/digits.png";
-        if (settings.visuals == "classicStyle") {images.grades.src = "img/main/gradesClassic.png";}
-        else if (settings.visuals == "masterStyle") {images.grades.src = "img/main/gradesMaster.png";}
-        else if (settings.visuals == "onTheBeat") {images.grades.src = "img/main/gradesOnTheBeat.png";}
-        else {images.grades.src = "img/main/gradesDragon.png";}
-        if (settings.visuals == "onTheBeat") {images.beatBar.src = "img/main/beatBar.png";}
+        images.tiles.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/tiles.png";
+images.hardDropTile.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/ghostTiles.png";
+
+if ((settings.visuals == "dragonStyle" && level >= 500) || settings.visuals == "onTheBeat") {
+    images.board.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/board3.png";
+}
+else if (settings.visuals == "masterStyle") {
+    images.board.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/board2.png";
+}
+else {
+    images.board.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/board.png";
+}
+
+images.sideInfo1.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/sideInfo.png";
+images.sideInfo2.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/digitsSmall.png";
+images.sideInfo3.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/finish.png";
+images.sideInfo4.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/boardBack.png";
+images.readyGo.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/readyGo.png";
+images.tileVanish.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/explosionEffect.png";
+images.digits.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/digits.png";
+
+if (settings.visuals == "classicStyle") {
+    images.grades.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/gradesClassic.png";
+}
+else if (settings.visuals == "masterStyle") {
+    images.grades.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/gradesMaster.png";
+}
+else if (settings.visuals == "onTheBeat") {
+    images.grades.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/gradesOnTheBeat.png";
+}
+else {
+    images.grades.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/gradesDragon.png";
+}
+
+if (settings.visuals == "onTheBeat") {
+    images.beatBar.src = "https://cdn.jsdelivr.net/gh/marlwolf606-dev/tetris-test@main/img/main/beatBar.png";
+}
         //Classic style DAS
         if (settings.gameMechanics == "classicStyle") {
             settings.DASInitial = classicStyleDASInitial[Math.floor(level/100)];
